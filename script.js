@@ -115,24 +115,4 @@ function fetchCityWeather(city) {
     });
 }
 
-function fetchWeatherForecast() {
-  var city = searchInput.value;
-  var queryURL =
-    "https://api.openweathermap.org/data/2.5/forecast?q=" +
-    city +
-    "&appid=" +
-    apiKey;
 
-  fetch(queryUrl)
-    .then(function (response) {
-      if (!response.ok) {
-        throw response.json();
-      }
-
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      forecastResult.append(data)
-    });
-}
